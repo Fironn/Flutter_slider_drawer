@@ -153,9 +153,9 @@ class SliderDrawerState extends State<SliderDrawer>
         vsync: this, duration: Duration(milliseconds: widget.animationDuration))
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          widget.onDrawerChanged!(true);
+          widget.onDrawerChanged?.call(true);
         } else if (status == AnimationStatus.dismissed) {
-          widget.onDrawerChanged!(false);
+          widget.onDrawerChanged?.call(false);
         }
       });
 
